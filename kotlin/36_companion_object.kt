@@ -1,6 +1,18 @@
 // Companion Object
 // 싱글톤 객체가 동일한 이름의 클래스와 연결되는 경우 이 객체를 컴패니언 객체라 한다.
 // 여기에 연결된 클래스를 컴패니언 클래스라고 한다.
+class A {
+    companion object {}
+}
+fun A.Companion.foo() {
+    print(2)
+}
+
+fun main(args: Array<String>) {
+    A.foo()
+}
+
+/////////////////////////////////////////////////////////////////////
 class ProductDetailsActivity {
   companion object {
 
@@ -26,6 +38,7 @@ class ProductDetailsActivity : AppCompatActivity() {
   }
 }
 
+/////////////////////////////////////////////////////////////////////
 // activity를 시작한다.
 ViewProductActivity.start(context, productId)
 
@@ -46,6 +59,7 @@ Car()
 Car()
 println(Car.count) // 2
 
+/////////////////////////////////////////////////////////////////////
 // 컴패니언 객체의 인스턴스 생성
 class Car {
   init {
@@ -73,6 +87,7 @@ class Car {
   Car.count
 }
 
+/////////////////////////////////////////////////////////////////////
 // 컴패니언 객체도 함수를 포함하고, 인터페이스를 구현하며, 클래스를 확장할 수도 있다.
 // 테스트를 위해 재정의 구현을 제공할 수 있는 정적 생성 메소드를 포함하는 컴패니언 객체를 정의할 수 있다.
 abstract class Provider<T> { // Provider 제네릭 클래스

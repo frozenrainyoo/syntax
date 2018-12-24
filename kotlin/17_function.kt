@@ -45,3 +45,8 @@ fun printSum(a: Int, b: Int) {
   val sum = a + b
   print(sum)
 }
+
+// (매개변수 형식)->반환 형식
+// (Int)->Int : Int 인수로 받고 Int를 반환하는 함수
+// ()->Int : 인수를 받지 않고 Int를 반환하는 함수
+// (Int)->Unit: Int 인수로 받고 아무것도 반환하지 않는 함수(실제로 반환할 필요가 없는 Unit)
