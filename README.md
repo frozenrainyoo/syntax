@@ -1,2 +1,3 @@
-# syntax-languages
-syntax languages..
+# syntax
+
+syntax languages & libraries
