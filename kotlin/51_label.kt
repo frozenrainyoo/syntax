@@ -11,7 +11,7 @@ fun printMessageButNotError(messages: List<String>) {
     if (it == "ERROR")
       return@messageProcessor // 라벨로 지정한 람다식에서 반환한다.
 
-    return(it)
+    print(it)
   }
 }
 
@@ -26,13 +26,30 @@ printMessageButNotError(list) // ABC
 inline fun <T> forEach(list: List<T>, body: (T) -> Unit) {
   for (i in list) body(i)
 }
-
 fun printMessageButNotError(messages: List<String>) {
-  // forEach 인수 안에 람다식에 대한 라벨을 정의한다.
   forEach(messages) {
     if (it == "ERROR")
-      return@forEach // 라벨로 지정한 람다식에서 반환한다.
+      return@forEach // 암시적 라벨의 이름은 함수이름에서 가져옴.
 
-    return(it)
+    print(it)
   }
 }
+// 사용법
+val list = listOf("A", "ERROR", "B", "ERROR", "C")
+printMessageButNotError(list) // ABC
+
+////////////////////////////////////////////////////////////
+inline fun <T> forEach(list: List<T>, body: (T) -> Unit) {
+  for (i in list) body(i)
+}
+fun printMessageButNotError(messages: List<String>) {
+  forEach(messages) {
+    if (it == "ERROR")
+      return // 인라인 함수의 논로컬 반환
+
+    print(it)
+  }
+}
+// 사용법
+val list = listOf("A", "ERROR", "B", "ERROR", "C")
+printMessageButNotError(list) // A
