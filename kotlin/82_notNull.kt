@@ -16,3 +16,4 @@ public fun <T: Any> notNull(): ReadWriteProperty<Any?, T> =
 //사용법
 var name: String by Delegates.notNull()
 println(name) // 오류 name 속성을 사용하기 전에 초기화해야 한다. 
+
