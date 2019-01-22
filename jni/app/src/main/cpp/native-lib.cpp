@@ -3,6 +3,7 @@
 #include <android/log.h>
 // reference url
 // https://yalantis.com/blog/android-ndk-calling-kotlin-from-native-code/
+// https://github.com/KucherenkoIhor/KotlinWithAndroidNdk
 
 struct App {
     JNIEnv *env;
