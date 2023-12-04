@@ -18,3 +18,5 @@ Ruby
 몇 년 안 쓰면 다 잃어버린다.. 정리해노면 그나마...
 
 [test](https://frozenrain.io/wow)
+
+[test2](frozenrain://wow)
